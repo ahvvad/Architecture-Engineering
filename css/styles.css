@@ -1,0 +1,336 @@
+/* Custom Styles for Iron Stairs Project */
+
+/* Responsive Design Base */
+:root {
+  --container-padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --container-padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: 4rem;
+  }
+}
+
+/* Responsive Typography */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Responsive Container */
+.container {
+  width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+}
+
+/* RTL Specific Styles */
+[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Selection Color */
+::selection {
+  background: #3b82f6;
+  color: white;
+}
+
+.dark ::selection {
+  background: #60a5fa;
+  color: white;
+}
+
+/* Image Hover Effects */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Custom Card Styles */
+.custom-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.dark .custom-card {
+  border-color: #374151;
+}
+
+.custom-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Custom Button Styles */
+.custom-button {
+  transition: all 0.3s ease;
+}
+
+.custom-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Custom Section Transitions */
+.section-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Grid Layout */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 80%;
+    max-width: 300px;
+    background: white;
+    padding: 1rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 50;
+  }
+
+  .dark .mobile-menu {
+    background: #1f2937;
+  }
+
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 40;
+  }
+}
+
+/* Responsive Images */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Responsive Spacing */
+.responsive-section {
+  padding: 2rem var(--container-padding);
+}
+
+@media (min-width: 768px) {
+  .responsive-section {
+    padding: 4rem var(--container-padding);
+  }
+}
+
+/* Navigation Styles */
+#mainNav {
+  transition: transform 0.3s ease-in-out;
+  height: calc(100% + 20px);
+}
+
+#mainNav.translate-x-full {
+  transform: translateX(100%);
+}
+
+@media (min-width: 768px) {
+  #mainNav {
+    transform: none !important;
+  }
+
+  #mainNav .flex {
+    flex-direction: row;
+  }
+}
+
+#navOverlay {
+  transition: opacity 0.3s ease-in-out;
+}
+
+#navOverlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Navigation Toggle Button */
+#navToggle {
+  transition: transform 0.3s ease-in-out;
+}
+
+#navToggle:hover {
+  transform: scale(1.1);
+}
+
+/* Dark Mode Toggle in Navigation */
+#darkModeToggle {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#darkModeToggle:hover {
+  transform: scale(1.1);
+}
+
+#darkModeToggle svg {
+  transition: transform 0.3s ease;
+}
+
+#darkModeToggle:hover svg {
+  transform: rotate(15deg);
+}
+
+/* Page Navigation Animations */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation Link Animations */
+#mainNav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+#mainNav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.dark #mainNav a::after {
+  background-color: #60a5fa;
+}
+
+#mainNav a:hover::after {
+  width: 100%;
+}
+
+/* Active Navigation Link */
+#mainNav a.active {
+  color: #3b82f6;
+}
+
+.dark #mainNav a.active {
+  color: #60a5fa;
+}
+
+#mainNav a.active::after {
+  width: 100%;
+}
+
+/* Section Transition Animation */
+.section-transition {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
